@@ -26,6 +26,10 @@ source-repository head
 library
   build-depends:
     base ^>= 4.15 || ^>= 4.16 || ^>= 4.17,
+    bytestring ^>= 0.11.3,
+    ki ^>= 1.0.0,
+    ptr-poker ^>= 0.1.2,
+    stm ^>= 2.5.1,
   default-extensions:
     AllowAmbiguousTypes
     BangPatterns
@@ -42,7 +46,6 @@ library
     InstanceSigs
     LambdaCase
     NamedFieldPuns
-    NoImplicitPrelude
     NumericUnderscores
     PartialTypeSignatures
     PatternSynonyms
