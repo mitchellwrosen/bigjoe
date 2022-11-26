@@ -40,7 +40,7 @@ fork :: Ki.Scope -> (ByteString -> IO ()) -> IO (Bigjoe PtrPoker.Write.Write)
 fork scope put = do
   -- Fork one logging thread per capability
   caps <- getNumCapabilities
-  chans <- Array.listArray (0, caps - 1) <$> replicateM (caps - 1) newTChanIO
+  chans <- Array.listArray (0, caps - 1) <$> replicateM caps newTChanIO
   for_ (Array.assocs chans) \(i, chan) ->
     Ki.forkWith_
       scope
